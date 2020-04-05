@@ -10,3 +10,5 @@ chứa function giải quyết bài toán ( có thể import N file khác )
 npm run test
 # Performance
 npm run benchmark 
+# Lint Code
+npm run lint
