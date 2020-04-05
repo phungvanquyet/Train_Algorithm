@@ -2,6 +2,7 @@ module.exports = {
     env: {
         browser: true,
         es6: true,
+        jest: true,
     },
     extends: [
         'airbnb-base',
@@ -15,7 +16,7 @@ module.exports = {
         SharedArrayBuffer: 'readonly',
     },
     parserOptions: {
-        ecmaVersion: 2018,
+        ecmaVersion: 11,
         sourceType: 'module',
     },
     rules: {
@@ -28,6 +29,9 @@ module.exports = {
         "node/prefer-global/url": ["error", "always"],
         "node/prefer-promises/dns": "error",
         "node/prefer-promises/fs": "error",
+        /* Rule Off */
+        "import/no-dynamic-require": "off",
+        "global-require": "off",
     },
     "plugins": ["import", "security"],
 };

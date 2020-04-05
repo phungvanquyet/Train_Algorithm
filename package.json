@@ -4,9 +4,10 @@
   "description": "Đây là dự án được tạo ra để rèn luyện về thuật toán",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest -c jest.config.js",
     "lint": "eslint --ext js --quiet --fix ./src",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "benchmark": "node ./benchmark/index.js"
   },
   "repository": {
     "type": "git",
@@ -22,13 +23,17 @@
   },
   "homepage": "https://github.com/PhamMinhHaiAu-12035071/Train_Algorithm#readme",
   "dependencies": {
+    "benchmark": "^2.1.4",
     "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-security": "^1.4.0",
+    "glob": "^7.1.6",
     "husky": "^4.2.3",
     "lint-staged": "^10.1.1",
+    "lodash": "^4.17.15",
+    "microtime": "^3.0.0",
     "prettier": "^1.19.1"
   },
   "type": "commonjs",
@@ -38,7 +43,8 @@
   "devDependencies": {
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
-    "eslint-plugin-import": "^2.20.2"
+    "eslint-plugin-import": "^2.20.2",
+    "jest": "^25.2.7"
   },
   "husky": {
     "hooks": {
@@ -46,6 +52,12 @@
     }
   },
   "lint-staged": {
-    "*.js": "eslint --fix"
+    "*.js": "eslint --fix ./src"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
   }
 }
