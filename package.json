@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest -c jest.config.js",
-    "lint": "eslint --ext js --quiet --fix ./src",
+    "lint": "eslint --ext js --fix ./src",
     "lint-staged": "lint-staged",
     "benchmark": "node ./benchmark/index.js"
   },
