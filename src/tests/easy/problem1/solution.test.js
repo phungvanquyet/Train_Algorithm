@@ -1,12 +1,8 @@
-/* eslint security/detect-non-literal-require: 0 */
-const glob = require('glob');
 const _ = require('lodash');
 const dataIntNumber = require('./data/int_number.json');
 const dataFloatNumber = require('./data/float_number.json');
+const { getListFuncProblem } = require('../../../helper/utils');
 
-const getListFuncProblem = path => {
-    return _.flow([_.partialRight(_.map, item => require(item))])(glob.sync(path));
-};
 describe('TestCase Easy', () => {
     describe('TestCase Problem 1', () => {
         const listObj = getListFuncProblem(`${process.cwd()}/src/easy/problem1/**/solution.js`);
