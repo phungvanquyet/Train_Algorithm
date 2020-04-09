@@ -6,7 +6,10 @@ const run = arr => {
     _.forEach(arr, (value, key) => {
         result.push(
             _.reduce(
-                _.compact(_.map(arr, (item, index) => (index !== key ? item : null))),
+                _.filter(
+                    _.map(arr, (item, index) => (index !== key ? item : null)),
+                    item => item !== null,
+                ),
                 (multiple, n) => {
                     multiple *= n;
                     return multiple;
