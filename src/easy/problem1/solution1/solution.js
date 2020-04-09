@@ -1,4 +1,4 @@
-const isFloat = require('./is_float');
+const isFloat = require('../is_float');
 
 const run = (arr, k) => {
     for (let i = 0, size = arr.length; i < size - 1; i += 1) {
