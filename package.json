@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest -c jest.config.js",
+    "test2": "jest --bail --findRelatedTests",
     "lint": "eslint --ext js --fix ./src",
     "lint-staged": "lint-staged",
     "benchmark": "node ./benchmark/index.js"
@@ -52,7 +53,10 @@
     }
   },
   "lint-staged": {
-    "*.js": "eslint --fix ./src"
+    "*.js": [
+      "eslint --fix ./src",
+      "jest --bail --findRelatedTests"
+    ]
   },
   "jest": {
     "testEnvironment": "node",
