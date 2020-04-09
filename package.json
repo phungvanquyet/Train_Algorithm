@@ -48,14 +48,11 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "npm test && lint-staged"
     }
   },
   "lint-staged": {
-    "*.js": [
-      "eslint --fix ./src",
-      "npm run test"
-    ]
+    "*.js": "eslint --fix ./src"
   },
   "jest": {
     "testEnvironment": "node",
